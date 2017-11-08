@@ -35,7 +35,7 @@
             </div>
         }
         <div id="divSearch">
-            @Html.Partial("~/Views/CustomerSearch/CustomerSearchResults.cshtml", Model.Results)
+            @Html.Partial(CustomerSearchController.SearchResultsView, Model.Results)
         </div>
     </div>
 </div>

@@ -1,9 +1,20 @@
 ﻿//-----------------------------------------------------------------------
 // <copyright file="CustomerController.cs" company="Genesys Source">
 //      Copyright (c) 2017 Genesys Source. All rights reserved.
-//      All rights are reserved. Reproduction or transmission in whole or in part, in
-//      any form or by any means, electronic, mechanical or otherwise, is prohibited
-//      without the prior written consent of the copyright owner.
+//      Licensed to the Apache Software Foundation (ASF) under one or more 
+//      contributor license agreements.  See the NOTICE file distributed with 
+//      this work for additional information regarding copyright ownership.
+//      The ASF licenses this file to You under the Apache License, Version 2.0 
+//      (the 'License'); you may not use this file except in compliance with 
+//      the License.  You may obtain a copy of the License at 
+//       
+//        http://www.apache.org/licenses/LICENSE-2.0 
+//       
+//       Unless required by applicable law or agreed to in writing, software  
+//       distributed under the License is distributed on an 'AS IS' BASIS, 
+//       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  
+//       See the License for the specific language governing permissions and  
+//       limitations under the License. 
 // </copyright>
 //-----------------------------------------------------------------------
 using Framework.DataAccess;
@@ -31,6 +42,7 @@ namespace Framework.WebApp
         public const string EditView = "~/Views/Customer/CustomerEdit.cshtml";
         public const string DeleteAction = "Delete";
         public const string DeleteView = "~/Views/Customer/CustomerDelete.cshtml";
+        public const string SuccessMessageKey = "SuccessMessage";
 
         /// <summary>
         /// Displays entity
@@ -43,7 +55,7 @@ namespace Framework.WebApp
             var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
-            if (model.ID == TypeExtension.DefaultInteger)
+            if (model.IsNew)
             {
                 ModelState.AddModelError("", "No customer found");
             }
@@ -84,13 +96,13 @@ namespace Framework.WebApp
         public ActionResult Create(CustomerModel model)
         {
             var customer = new CustomerInfo();
-            
-            customer.Fill(model);            
-            customer.Save(); // Save screen changes to database.
-            model.Fill(customer);  // Fill the CustomerModel view model, so the class can be specific to the screen's needs and drop the heavy data access items.
-            if (customer.IsNew == false)
+
+            customer.Fill(model);
+            customer.Save();
+            if (!customer.IsNew)
             {
-                ModelState.AddModelError("", "Successfully created");
+                TempData[SuccessMessageKey] = "Successfully created";
+                model.Fill(customer);
             } else
             {
                 ModelState.AddModelError("", "Failed to create");
@@ -110,7 +122,7 @@ namespace Framework.WebApp
             var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
-            if (model.ID == TypeExtension.DefaultInteger)
+            if (model.IsNew)
             {
                 ModelState.AddModelError("", "No customer found");
             }
@@ -129,14 +141,13 @@ namespace Framework.WebApp
         {
             var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var customer = new CustomerInfo();
-            
-            customer = reader.GetByID(model.ID);
-            customer.Fill(model); // Overlay all screen edits on-top of the data-access-object, to preserve untouched original data
+
+            customer.Fill(model);
             customer.Save();
-            model.Fill(customer); // Go back to screen model for ui-specific functionality to be available to view/page
-            if (customer.IsNew == false)
+            if (!customer.IsNew)
             {
-                ModelState.AddModelError("", "Successfully saved");
+                TempData[SuccessMessageKey] = "Successfully saved";
+                model.Fill(customer);
             } else
             {
                 ModelState.AddModelError("", "Failed to save");
@@ -156,7 +167,7 @@ namespace Framework.WebApp
             var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
-            if (model.ID == TypeExtension.DefaultInteger)
+            if (model.IsNew)
             {
                 ModelState.AddModelError("", "No customer found");                
             }
@@ -165,7 +176,7 @@ namespace Framework.WebApp
         }
 
         /// <summary>
-        /// Deletes a customer by key
+        /// Deletes a customer
         /// </summary>
         /// <param name="model">Customer to delete</param>
         /// <returns>View rendered with model data</returns>
@@ -178,18 +189,17 @@ namespace Framework.WebApp
 
             customer = reader.GetByID(model.ID);
             customer.Delete();
-            customer = reader.GetByID(model.ID); // Verify delete, success returns empty object
-            if (customer.ID == TypeExtension.DefaultInteger)
+            if (reader.GetByID(model.ID).IsNew)
             {
-                model.Fill(customer); // Fill the CustomerModel view model, so the class can be specific to the screen's needs and drop the heavy data access items.
-                ModelState.AddModelError("", "Successfully deleted");
+                TempData[SuccessMessageKey] = "Successfully deleted";
+                model.Fill(customer);
             } 
             else
             {
                 ModelState.AddModelError("", "Failed to delete");
             }
 
-            return View(CustomerController.SummaryView, model);
+            return View(CustomerSearchController.SearchView, model);
         }
     }
 }
