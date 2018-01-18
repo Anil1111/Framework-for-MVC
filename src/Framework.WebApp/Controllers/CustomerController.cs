@@ -52,7 +52,7 @@ namespace Framework.WebApp
         [HttpGet]
         public ActionResult Summary(string id)
         {
-            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
+            var reader = DatabaseReader<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
             if (model.IsNew)
@@ -71,7 +71,7 @@ namespace Framework.WebApp
         [HttpPost()]
         public ActionResult Summary(CustomerModel model)
         {
-            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();                  
+            var reader = DatabaseReader<CustomerInfo>.Construct();                  
             model.Fill(reader.GetByID(model.ID));
             return View(CustomerController.EditView, model);
         }
@@ -119,7 +119,7 @@ namespace Framework.WebApp
         [HttpGet()]
         public ActionResult Edit(string id)
         {
-            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
+            var reader = DatabaseReader<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
             if (model.IsNew)
@@ -139,7 +139,7 @@ namespace Framework.WebApp
         [HttpPost()]
         public ActionResult Edit(CustomerModel model)
         {
-            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
+            var reader = DatabaseReader<CustomerInfo>.Construct();
             var customer = new CustomerInfo();
 
             customer.Fill(model);
@@ -164,7 +164,7 @@ namespace Framework.WebApp
         [HttpGet()]
         public ActionResult Delete(string id)
         {
-            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
+            var reader = DatabaseReader<CustomerInfo>.Construct();
             var model = new CustomerModel();
             model.Fill(reader.GetByID(id.TryParseInt32()));
             if (model.IsNew)
@@ -184,7 +184,7 @@ namespace Framework.WebApp
         [HttpPost()]
         public ActionResult Delete(CustomerModel model)
         {
-            var reader = ReadOnlyDatabase<CustomerInfo>.Construct();
+            var reader = DatabaseReader<CustomerInfo>.Construct();
             var customer = new CustomerInfo();
 
             customer = reader.GetByID(model.ID);
