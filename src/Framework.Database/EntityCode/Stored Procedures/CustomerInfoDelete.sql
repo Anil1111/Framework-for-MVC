@@ -1,7 +1,17 @@
 ﻿Create Procedure [EntityCode].[CustomerInfoDelete]
-	@ID	INT,
-	@ActivityContextID		INT
+	@Id					int,
+	@ActivityContextId	int,
+	@Key				uniqueidentifier
 AS
-	Delete
-	From	[Entity].[Customer]
-	Where	CustomerID = @ID
+	Begin Tran;
+	Begin Try	
+		Delete
+		From	[Entity].[Customer]
+		Where	CustomerKey = @Key
+		Commit;
+	End Try
+	Begin Catch
+		Rollback;
+		Exec [Activity].[ExceptionLogInsertByActivity] @ActivityContextId;
+		Throw;
+	End Catch

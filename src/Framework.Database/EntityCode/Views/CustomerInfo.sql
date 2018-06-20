@@ -1,15 +1,15 @@
 ﻿Create View [EntityCode].[CustomerInfo]
 As
-Select	C.[CustomerID] As [ID],
-		C.[CustomerKey] As [Key],
+Select	C.[CustomerId] As [Id],
+		Cast(C.[CustomerKey] As uniqueidentifier) As [Key],
 		C.[FirstName], 
 		C.[MiddleName], 
 		C.[LastName], 
 		C.[BirthDate], 
-		C.[GenderID],
-		CT.[CustomerTypeKey],
-		C.[CreatedActivityID] As [ActivityContextID],
+		C.[GenderId],
+		Cast(CT.[CustomerTypeKey] As uniqueidentifier) As [CustomerTypeKey],
+		C.[ActivityContextId],
 		C.[CreatedDate], 
 		C.[ModifiedDate]
 From	[Entity].[Customer] C
-Join	[Entity].[CustomerType] CT On C.CustomerTypeID = CT.CustomerTypeID
+Join	[Entity].[CustomerType] CT On C.CustomerTypeId = CT.CustomerTypeId

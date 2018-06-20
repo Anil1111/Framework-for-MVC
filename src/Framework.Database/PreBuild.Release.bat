@@ -1,17 +1,15 @@
-ECHO Starting PreBuild.bat
-REM Usage: Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)"
+ECHO OFF
+ECHO Starting PreBuild.bat %1 %2 %3
+REM Usage: Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)" "$(ProjectName)"
 REM Vars:  $(ProjectName) = MyCo.Framework. Models, $(TargetPath) = output file, $(TargetDir) = full bin path , $(OutDir) = bin\debug, $(ConfigurationName) = "Debug"
 
 REM Locals
 SET FullPath=%1
 SET FullPath=%FullPath:"=%
-SET ProductFolder="framework.database"
-
-ECHO ** PreBuild.bat **
 ECHO FullPath: %FullPath%
 SET Configuration=%2
 ECHO Configuration: %Configuration%
-
-
+SET ProjectName=%3
+ECHO ProjectName: %ProjectName%
 
 exit 0

@@ -1,17 +1,25 @@
 ##############################################
 # .tfignore
 ##############################################
-# Ignore the NuGet packages folder in the root of the repository.
-# If needed, prefix 'packages' with additional folder names if it's 
-# not in the same folder as .tfignore.
-packages
 
-# include package target files which may be required for msbuild,
-# again prefixing the folder name as needed.
+# Ignore Packages folder
+packages
+# Do not ignore packages needed for .NET targetting
 !packages/*.targets
 
+# Ignore compilation output
+bin
+obj
+
+# Ignore Visual Studio local files
+*.user
+# Ignore MS Test results
+testresults
 # Ignore .jfm SSDT Temp file
 *.jfm
+# Ignore primary source control (TFS/VSS)
+*.vspscc
+
 
 ##############################################
 ### Examples

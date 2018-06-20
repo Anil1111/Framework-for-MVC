@@ -1,0 +1,66 @@
+﻿@model Framework.Customer.CustomerModel
+@using Genesys.Extensions
+@using Framework.WebApp
+@using Framework.Customer
+
+<div id="section-summary" class="section-light">
+    <div class="section-contents">
+        @using (Html.BeginForm(CustomerController.SummaryAction, CustomerController.ControllerName, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+        {
+            <div class="section-header">Customer Summary</div>
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Key)
+            @Html.HiddenFor(m => m.GenderId)
+            <div class="form-group row">
+                @Html.LabelFor(m => m.Id, "Id", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.LabelFor(m => m.Id, Model.Id == TypeExtension.DefaultInteger ? TypeExtension.DefaultString : Model.Id.ToString(), new { @class = "control-label" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(m => m.FirstName, "First Name", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.FirstName, Model.FirstName, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(m => m.LastName, "Last Name", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.LastName, Model.LastName, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(m => m.BirthDate, "Birth Date", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.BirthDate, Model.BirthDate == TypeExtension.DefaultDate ? TypeExtension.DefaultString : Model.BirthDate.ToString("MM/dd/yyyy"), new { @id = "lblBirthDate", @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(m => m.GenderId, "Gender", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBox("txtGender", GenderList.GetAll().Where(y => y.Key == Model.GenderId).FirstOrDefault().Value ?? "Not Selected", new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group row section-buttons">
+                <div class="offset-3 col-sm-3">
+                    <button type="button" id="btnEdit" class="btn btn-primary" onclick="window.location.href='@Url.Action(CustomerController.EditAction, CustomerController.ControllerName, new { id = Model.Id })'">Edit</button>
+                </div>
+                <div class="col-sm-3">
+                    <button type="button" id="btnDelete" class="btn btn-primary" onclick="window.location.href='@Url.Action(CustomerController.DeleteAction, CustomerController.ControllerName, new { id = Model.Id })'">Delete</button>
+                </div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 ">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    @Html.ValidationSummary(false, "Action resulted in...", new { @class = "text-danger" })
+                }
+                else
+                {
+                    <p class="text-info">@TempData[CustomerController.ResultMessage]</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

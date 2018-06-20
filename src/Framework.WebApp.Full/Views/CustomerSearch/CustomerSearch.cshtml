@@ -1,0 +1,55 @@
+﻿@model Framework.Customer.CustomerSearchModel
+@using Genesys.Extensions
+@using Framework.WebApp
+
+<div id="section-search" class="section-light">
+    <div class="section-contents">
+        @using (Html.BeginForm(CustomerSearchController.SearchAction, CustomerSearchController.ControllerName, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <div class="section-header">Find a Customer</div>
+            @Html.AntiForgeryToken()
+            <div class="form-group row">
+                @Html.Label("Id", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBox("Id", Model.Id, new { @id = "txtId", @class = "form-control", @Value = Model.Id == TypeExtension.DefaultInteger ? TypeExtension.DefaultString : Model.Id.ToString(), @placeholder = "Customer Id" })
+                    @Html.ValidationMessageFor(m => m.Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.Label("First Name", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBox("FirstName", Model.FirstName, new { @id = "txtFirstName", @class = "form-control", @placeholder = "Customer First Name" })
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                @Html.Label("Last Name", new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBox("LastName", Model.LastName, new { @id = "txtLastName", @class = "form-control", @placeholder = "Customer Last Name" })
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <button id="btnSearchServer" type="submit" class="btn btn-primary">Search (Server-Side)</button>
+            <button id="btnSearchClient" type="button" class="btn btn-primary">Search (Client-Side)</button>
+        }
+        <div id="divSearch">
+            @Html.Partial(CustomerSearchController.SearchResultsView, Model.Results)
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $('#btnSearchClient').on('click', function () {
+            $.ajax({
+                url: '@Url.Action(CustomerSearchController.SearchResultsAction, CustomerSearchController.ControllerName)',
+                type: 'POST',
+                dataType: 'text',
+                data: { id: $("#txtId").val(), firstName: $("#txtFirstName").val(), lastName: $("#txtLastName").val() },
+                success: function (data) {
+                    $('#divSearch').html(data);
+                }
+            })
+        });
+    </script>
+}

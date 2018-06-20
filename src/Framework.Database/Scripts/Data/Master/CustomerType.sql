@@ -22,11 +22,11 @@ WHEN NOT MATCHED BY SOURCE THEN
 	DELETE;
 
 -- Handle for default record for "Not Selected" state
-If(Select Count(*) From [Entity].[CustomerType] Where CustomerTypeKey = '00000000-0000-0000-0000-000000000000' And CustomerTypeID <> -1) > 0
+If(Select Count(*) From [Entity].[CustomerType] Where CustomerTypeKey = '00000000-0000-0000-0000-000000000000' And CustomerTypeId <> -1) > 0
 Begin
 	Set identity_insert  [Entity].[CustomerType] ON
-	Insert Into [Entity].[CustomerType] ([CustomerTypeID], [CustomerTypeKey], [CustomerTypeName])
-		Select  -1 As [CustomerTypeID], [CustomerTypeKey], [CustomerTypeName] From [Entity].[CustomerType] where CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
+	Insert Into [Entity].[CustomerType] ([CustomerTypeId], [CustomerTypeKey], [CustomerTypeName])
+		Select  -1 As [CustomerTypeId], [CustomerTypeKey], [CustomerTypeName] From [Entity].[CustomerType] where CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
 	Set identity_insert  [Entity].[CustomerType] OFF
-	Delete From [Entity].[CustomerType] Where CustomerTypeID <> -1 And CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
+	Delete From [Entity].[CustomerType] Where CustomerTypeId <> -1 And CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
 End

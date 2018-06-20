@@ -1,6 +1,6 @@
 ﻿Create View [EntityCode].[CustomerType]
 As
-Select	CT.[CustomerTypeID] As [ID],
+Select	CT.[CustomerTypeId] As [Id],
 		CT.[CustomerTypeKey] As [Key],
 		CT.[CustomerTypeName] As [Name], 
 		CT.[CreatedDate], 

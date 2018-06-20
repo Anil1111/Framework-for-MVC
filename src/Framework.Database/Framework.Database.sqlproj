@@ -78,10 +78,10 @@
     <Folder Include="EntityCode\Views" />
     <Folder Include="Entity\Tables" />
     <Folder Include="Activity" />
-    <Folder Include="Activity\Stored Procedures" />
     <Folder Include="Activity\Tables" />
     <Folder Include="Identity" />
     <Folder Include="Identity\Tables" />
+    <Folder Include="Activity\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Data\Master\CustomerType.sql" />
@@ -132,7 +132,7 @@
     <Build Include="Security\Identity.sql" />
     <Build Include="Identity\Tables\AspNetUsers.sql" />
     <Build Include="Identity\Tables\__MigrationHistory.sql" />
-    <Build Include="EntityCode\Stored Procedures\ExceptionLogInsert.sql" />
+    <Build Include="Activity\Stored Procedures\ExceptionLogInsertByActivity.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Identity\Tables\AspNetRoles.sql" />
@@ -150,6 +150,6 @@
     <PostBuildEvent>Call "$(MSBuildProjectDirectory)\PostBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)\$(OutDir)" "$(ConfigurationName)" "$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)"</PreBuildEvent>
+    <PreBuildEvent>Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)" "$(ProjectName)"</PreBuildEvent>
   </PropertyGroup>
 </Project>
