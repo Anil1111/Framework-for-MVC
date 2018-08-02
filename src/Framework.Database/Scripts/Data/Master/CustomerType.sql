@@ -1,7 +1,7 @@
 ﻿--------------------------------------------------------------
 -- CustomerType
 --------------------------------------------------------------
-MERGE INTO [Entity].[CustomerType] AS Target 
+MERGE INTO [Customer].[CustomerType] AS Target 
 USING (VALUES 
 	(N'00000000-0000-0000-0000-000000000000', N'None'),
 	(N'BF3797EE-06A5-47F2-9016-369BEB21D944', N'Standard Customers'),
@@ -22,11 +22,11 @@ WHEN NOT MATCHED BY SOURCE THEN
 	DELETE;
 
 -- Handle for default record for "Not Selected" state
-If(Select Count(*) From [Entity].[CustomerType] Where CustomerTypeKey = '00000000-0000-0000-0000-000000000000' And CustomerTypeId <> -1) > 0
+If(Select Count(*) From [Customer].[CustomerType] Where CustomerTypeKey = '00000000-0000-0000-0000-000000000000' And CustomerTypeId <> -1) > 0
 Begin
-	Set identity_insert  [Entity].[CustomerType] ON
-	Insert Into [Entity].[CustomerType] ([CustomerTypeId], [CustomerTypeKey], [CustomerTypeName])
-		Select  -1 As [CustomerTypeId], [CustomerTypeKey], [CustomerTypeName] From [Entity].[CustomerType] where CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
-	Set identity_insert  [Entity].[CustomerType] OFF
-	Delete From [Entity].[CustomerType] Where CustomerTypeId <> -1 And CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
+	Set identity_insert  [Customer].[CustomerType] ON
+	Insert Into [Customer].[CustomerType] ([CustomerTypeId], [CustomerTypeKey], [CustomerTypeName])
+		Select  -1 As [CustomerTypeId], [CustomerTypeKey], [CustomerTypeName] From [Customer].[CustomerType] where CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
+	Set identity_insert  [Customer].[CustomerType] OFF
+	Delete From [Customer].[CustomerType] Where CustomerTypeId <> -1 And CustomerTypeKey = '00000000-0000-0000-0000-000000000000'
 End

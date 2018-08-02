@@ -4,8 +4,7 @@
 
 <div id="section-search" class="section-light">
     <div class="section-contents">
-        @using (Html.BeginForm(CustomerSearchController.SearchAction, CustomerSearchController.ControllerName, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
+        <form action="~/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.SearchAction)" method="post" class="form-horizontal" role="form">
             <div class="section-header">Find a Customer</div>
             @Html.AntiForgeryToken()
             <div class="form-group row">
@@ -31,7 +30,7 @@
             </div>
             <button id="btnSearchServer" type="submit" class="btn btn-primary">Search (Server-Side)</button>
             <button id="btnSearchClient" type="button" class="btn btn-primary">Search (Client-Side)</button>
-        }
+        </form>
         <div id="divSearch">
             @Html.Partial(CustomerSearchController.SearchResultsView, Model.Results)
         </div>

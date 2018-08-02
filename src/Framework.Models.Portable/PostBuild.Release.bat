@@ -11,12 +11,5 @@ SET Configuration=%2
 ECHO Configuration: %Configuration%
 SET ProjectName=%3
 ECHO ProjectName: %ProjectName%
-SET LibFolder="\lib\%ProjectName%\"
-ECHO LibFolder: %LibFolder%
-
-REM Publish Output
-MD %LibFolder%
-%WINDIR%\system32\attrib.exe %LibFolder%*.* -r /s
-%WINDIR%\system32\xcopy.exe "%FullPath%\*.*" "%LibFolder%*.*" /d/f/s/e/r/c/y
 
 Exit 0

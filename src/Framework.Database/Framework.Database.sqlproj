@@ -72,16 +72,17 @@
     <Folder Include="Scripts\Data\Master" />
     <Folder Include="Scripts\Data\Shared" />
     <Folder Include="Scripts\Environment" />
-    <Folder Include="Entity" />
-    <Folder Include="EntityCode" />
-    <Folder Include="EntityCode\Stored Procedures" />
-    <Folder Include="EntityCode\Views" />
-    <Folder Include="Entity\Tables" />
+    <Folder Include="Customer" />
+    <Folder Include="CustomerCode" />
+    <Folder Include="CustomerCode\Stored Procedures" />
+    <Folder Include="CustomerCode\Views" />
+    <Folder Include="Customer\Tables" />
     <Folder Include="Activity" />
     <Folder Include="Activity\Tables" />
     <Folder Include="Identity" />
     <Folder Include="Identity\Tables" />
     <Folder Include="Activity\Stored Procedures" />
+    <Folder Include="Publish\Dev" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Data\Master\CustomerType.sql" />
@@ -93,28 +94,29 @@
     <Build Include="Security\Login_FrameworkUser.sql" />
     <Build Include="Security\RoleMemberships.sql" />
     <Build Include="Security\User_FrameworkUser.sql" />
-    <Build Include="Security\EntityCode.sql" />
-    <Build Include="EntityCode\Stored Procedures\CustomerInfoDelete.sql" />
-    <Build Include="EntityCode\Stored Procedures\CustomerInfoInsert.sql" />
-    <Build Include="EntityCode\Stored Procedures\CustomerInfoUpdate.sql" />
-    <Build Include="EntityCode\Views\CustomerInfo.sql" />
-    <Build Include="EntityCode\Views\CustomerType.sql" />
-    <Build Include="Entity\Tables\Customer.sql" />
-    <Build Include="Entity\Tables\CustomerType.sql" />
+    <Build Include="Security\CustomerCode.sql" />
+    <Build Include="CustomerCode\Stored Procedures\CustomerInfoDelete.sql" />
+    <Build Include="CustomerCode\Stored Procedures\CustomerInfoInsert.sql" />
+    <Build Include="CustomerCode\Stored Procedures\CustomerInfoUpdate.sql" />
+    <Build Include="CustomerCode\Views\CustomerInfo.sql" />
+    <Build Include="CustomerCode\Views\CustomerType.sql" />
+    <Build Include="Customer\Tables\Customer.sql" />
+    <Build Include="Customer\Tables\CustomerType.sql" />
     <Build Include="Activity\Tables\ActivityContext.sql" />
     <Build Include="Activity\Tables\ExceptionLog.sql" />
-    <Build Include="Security\Entity.sql" />
+    <Build Include="Security\Customer.sql" />
     <Build Include="Security\Role_db_executor.sql" />
     <None Include="Publish\PublishToLocal.publish.xml" />
     <None Include="PostBuild.Debug.bat" />
     <None Include="PostBuild.Release.bat" />
     <None Include="PreBuild.Debug.bat" />
     <None Include="PreBuild.Release.bat" />
+    <None Include="Publish\Dev\PublishToDev.publish.xml" />
+    <None Include="Publish\Dev\PublishToDev-Compare.scmp" />
+    <None Include="Publish\PublishToFile.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish\Production\PublishToProd.publish.xml" />
-    <None Include="Publish\PublishToDev.publish.xml" />
-    <None Include="Publish\PublishToDev-Compare.scmp" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />

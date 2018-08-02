@@ -49,26 +49,26 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extensions.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.6.444561\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+    <Reference Include="Genesys.Extensions.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extensions.Full.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extensions.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.6.444561\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
+    <Reference Include="Genesys.Extensions.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extras.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.6.444561\lib\net46\Genesys.Extras.Full.dll</HintPath>
+    <Reference Include="Genesys.Extras.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extras.Full.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extras.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.6.444561\lib\net46\Genesys.Extras.Portable.dll</HintPath>
+    <Reference Include="Genesys.Extras.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extras.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.DataAccess.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.6.447491\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.8.10491\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.6.447491\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.Models.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.6.447491\lib\net46\Genesys.Framework.Models.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Models.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
@@ -91,79 +91,31 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="..\Framework.Test.Shared\Activity\ActivityLoggerTests.cs">
-      <Link>Activity\ActivityLoggerTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Activity\ExceptionLoggerTests.cs">
-      <Link>Activity\ExceptionLoggerTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Application\ITestApplication.cs">
-      <Link>Application\ITestApplication.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Application\TestApplication.cs">
-      <Link>Application\TestApplication.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\ConnectionStringNameAttributeTests.cs">
-      <Link>Data\ConnectionStringNameAttributeTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\DataAccessBehaviorAttributeTests.cs">
-      <Link>Data\DataAccessBehaviorAttributeTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\DatabaseSchemaNameAttributeTests.cs">
-      <Link>Data\DatabaseSchemaNameAttributeTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\ReadOnlyDatabaseTests.cs">
-      <Link>Data\ReadOnlyDatabaseTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\SaveableDatabaseTests.cs">
-      <Link>Data\SaveableDatabaseTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\TakeRowsAttributeTests.cs">
-      <Link>Data\TakeRowsAttributeTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Data\Test.Data.Tables.cs">
-      <Link>Data\Test.Data.Tables.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Endpoints\Framework-for-WebApi-Tests.cs">
-      <Link>Endpoints\Framework-for-WebApi-Tests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Entity\CrudEntityTests.cs">
-      <Link>Entity\CrudEntityTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Entity\CustomerEntityTests.cs">
-      <Link>Entity\CustomerEntityTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Model\CustomerModelTests.cs">
-      <Link>Model\CustomerModelTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Model\CustomerSearchModelTests.cs">
-      <Link>Model\CustomerSearchModelTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Model\TestViewModel.cs">
-      <Link>Model\TestViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Model\ViewModelTests.cs">
-      <Link>Model\ViewModelTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Serialization\JsonSerializerGenericTests.cs">
-      <Link>Serialization\JsonSerializerGenericTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Serialization\JsonSerializerTests.cs">
-      <Link>Serialization\JsonSerializerTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Serialization\SerializerGenericTests.cs">
-      <Link>Serialization\SerializerGenericTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Serialization\SerializerTests.cs">
-      <Link>Serialization\SerializerTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Validation\ValidationRuleTests.cs">
-      <Link>Validation\ValidationRuleTests.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Test.Shared\Worker\WorkerTests.cs">
-      <Link>Worker\WorkerTests.cs</Link>
-    </Compile>
+    <Compile Include="Activity\ActivityLoggerTests.cs" />
+    <Compile Include="Activity\ExceptionLoggerTests.cs" />
+    <Compile Include="Application\ITestApplication.cs" />
+    <Compile Include="Application\TestApplication.cs" />
+    <Compile Include="Data\ConnectionStringNameAttributeTests.cs" />
+    <Compile Include="Data\DataAccessBehaviorAttributeTests.cs" />
+    <Compile Include="Data\DatabaseSchemaNameAttributeTests.cs" />
+    <Compile Include="Data\ValueReaderTests.cs" />
+    <Compile Include="Data\StoredProcedureWriterTests.cs" />
+    <Compile Include="Data\TakeRowsAttributeTests.cs" />
+    <Compile Include="Data\Test.Data.Tables.cs" />
+    <Compile Include="Endpoints\Framework-for-WebApi-Tests.cs" />
+    <Compile Include="Entity\CrudEntityTests.cs" />
+    <Compile Include="Entity\CustomerEntityTests.cs" />
+    <Compile Include="Model\CustomerModelTests.cs" />
+    <Compile Include="Model\CustomerSearchModelTests.cs" />
+    <Compile Include="Model\TestViewModel.cs" />
+    <Compile Include="Model\ViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\JsonSerializerGenericTests.cs" />
+    <Compile Include="Serialization\JsonSerializerTests.cs" />
+    <Compile Include="Serialization\SerializerGenericTests.cs" />
+    <Compile Include="Serialization\SerializerTests.cs" />
+    <Compile Include="Validation\ValidationRuleTests.cs" />
+    <Compile Include="Worker\WorkerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Data\AppSettings.config">
@@ -178,6 +130,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Compile Include="ConfigurationManagerLocal.cs" />
     <None Include="PostBuild.Debug.bat" />
     <None Include="PostBuild.Release.bat" />
     <None Include="PreBuild.Debug.bat" />
@@ -193,12 +146,8 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="App_Data\FrameworkData_Primary.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>FrameworkData_Primary.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\FrameworkData_Primary.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="packages.config">
       <SubType>Designer</SubType>

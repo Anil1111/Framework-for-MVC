@@ -61,26 +61,26 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extensions.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.6.444561\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+    <Reference Include="Genesys.Extensions.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extensions.Full.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extensions.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.6.444561\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
+    <Reference Include="Genesys.Extensions.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extras.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.6.444561\lib\net46\Genesys.Extras.Full.dll</HintPath>
+    <Reference Include="Genesys.Extras.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extras.Full.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extras.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.6.444561\lib\net46\Genesys.Extras.Portable.dll</HintPath>
+    <Reference Include="Genesys.Extras.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extras.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.DataAccess.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.6.447491\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.8.10491\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.6.447491\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.Models.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.6.447491\lib\net46\Genesys.Framework.Models.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Models.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -197,12 +197,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\FrameworkData.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\FrameworkData_log.ldf">
-      <DependentUpon>FrameworkData.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="App_Data\FrameworkData_Primary.mdf" />
+    <Content Include="App_Data\FrameworkData_Primary_log.ldf">
+      <DependentUpon>FrameworkData_Primary.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -252,13 +249,13 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="App_Data\AppSettings.Debug.config" />
-    <Content Include="App_Data\ConnectionStrings.Debug.config" />
+    <None Include="App_Data\AppSettings.Debug.config" />
+    <None Include="App_Data\ConnectionStrings.Debug.config" />
     <Content Include="images\genesys\Map-of-the-Genesys-Source-Framework.png" />
-    <Content Include="PostBuild.Debug.bat" />
-    <Content Include="PostBuild.Release.bat" />
-    <Content Include="PreBuild.Debug.bat" />
-    <Content Include="PreBuild.Release.bat" />
+    <None Include="PostBuild.Debug.bat" />
+    <None Include="PostBuild.Release.bat" />
+    <None Include="PreBuild.Debug.bat" />
+    <None Include="PreBuild.Release.bat" />
     <Content Include="App_Data\AppSettings.config" />
     <Content Include="App_Data\ConnectionStrings.config" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -310,8 +307,10 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="App_Data\AppSettings.Release.config" />
-    <Content Include="App_Data\ConnectionStrings.Release.config" />
+    <None Include="App_Data\AppSettings.Release.config" />
+    <None Include="App_Data\ConnectionStrings.Release.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\umd\popper-utils.js" />
@@ -365,8 +364,8 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\footer.cshtml" />
-    <Content Include="Views\Shared\header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

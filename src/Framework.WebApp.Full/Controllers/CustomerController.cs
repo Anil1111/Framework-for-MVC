@@ -19,8 +19,11 @@
 //-----------------------------------------------------------------------
 using Framework.Customer;
 using Genesys.Extensions;
+using Genesys.Extras.Configuration;
 using Genesys.Extras.Web.Http;
 using Genesys.Framework.Repository;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace Framework.WebApp
@@ -33,14 +36,14 @@ namespace Framework.WebApp
     {
         public const string ControllerName = "Customer";
         public const string SummaryAction = "Summary";
-        public const string SummaryView = "/Views/Customer/CustomerSummary.cshtml";
+        public const string SummaryView = "~/Views/Customer/CustomerSummary.cshtml";
         public const string CreateAction = "Create";
         public const string CreateActionText = CreateAction;
-        public const string CreateView = "/Views/Customer/CustomerCreate.cshtml";
+        public const string CreateView = "~/Views/Customer/CustomerCreate.cshtml";
         public const string EditAction = "Edit";
-        public const string EditView = "/Views/Customer/CustomerEdit.cshtml";
+        public const string EditView = "~/Views/Customer/CustomerEdit.cshtml";
         public const string DeleteAction = "Delete";
-        public const string DeleteView = "/Views/Customer/CustomerDelete.cshtml";
+        public const string DeleteView = "~/Views/Customer/CustomerDelete.cshtml";
         public const string ResultMessage = "ResultMessage";
 
         /// <summary>
@@ -106,7 +109,7 @@ namespace Framework.WebApp
         {
             var customer = model.CastOrFill<CustomerInfo>();
 
-            customer.Save();
+            customer = customer.Save();
             if (!customer.IsNew)
                 TempData[ResultMessage] = "Successfully created";
             else
@@ -143,8 +146,8 @@ namespace Framework.WebApp
         {
             var reader = new EntityReader<CustomerInfo>();
             var customer = model.CastOrFill<CustomerInfo>();
-            
-            customer.Save();
+
+            customer = customer.Save();
             if (!customer.IsNew)
                 TempData[ResultMessage] = "Successfully saved";
             else
@@ -180,7 +183,7 @@ namespace Framework.WebApp
         public ActionResult Delete(CustomerModel model)
         {
             var reader = new EntityReader<CustomerInfo>();
-            var customer = reader.GetById(model.Id);
+            var customer = reader.GetByKey(model.Key);
 
             customer = customer.Delete();
             if (customer.IsNew)
@@ -189,6 +192,21 @@ namespace Framework.WebApp
                 TempData[ResultMessage] = "Failed to delete";
 
             return View(CustomerSearchController.SearchView, customer.CastOrFill<CustomerSearchModel>());
+        }
+
+        /// <summary>
+        /// Can connect to the database?
+        /// </summary>
+        /// <returns></returns>
+        public static bool CanConnect()
+        {
+            var returnValue = TypeExtension.DefaultBoolean;
+            var configuration = new ConfigurationManagerFull(ApplicationTypes.Native);
+            using (var connection = new SqlConnection(configuration.ConnectionStringValue("DefaultConnection")))
+            {
+                returnValue = connection.CanOpen();
+            }
+            return returnValue;
         }
     }
 }

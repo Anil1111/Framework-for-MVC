@@ -11,14 +11,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.SearchAction)" alt="@(CustomerSearchController.SearchAction)">@(CustomerSearchController.SearchActionText)</a>
+                    <a class="nav-link" href="~/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.SearchAction)" alt="@(CustomerSearchController.SearchAction)">@(CustomerSearchController.SearchActionText)</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/@(CustomerController.ControllerName)/@(CustomerController.CreateAction)" alt="@(CustomerController.CreateAction)">@(CustomerController.CreateActionText)</a>
+                    <a class="nav-link" href="~/@(CustomerController.ControllerName)/@(CustomerController.CreateAction)" alt="@(CustomerController.CreateAction)">@(CustomerController.CreateActionText)</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        More
+                        About
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="http://docs.GenesysSource.com" alt="Docs" target="_blank">Docs</a>
@@ -28,12 +28,17 @@
                     </div>
                 </li>
             </ul>
-            <form action="/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.SearchAction)" method="post" class="form-inline input-group-sm btn-group-sm">
-                <input name="Id" id="txtIdHeader" type="hidden" placeholder="Customer Id" value="-1">
-                <input name="FirstName" id="txtFirstNameHeader" type="text" placeholder="First" value="" class="form-control col-md-3 mr-1">
-                <input name="LastName" id="txtLastNameHeader" type="text" placeholder="Last" value="" class="form-control col-md-3 mr-1">
-                <button class="btn btn-outline-primary" type="submit">Search</button>
-            </form>
+            <div class="text-right">
+                <form action="~/@(CustomerSearchController.ControllerName)/@(CustomerSearchController.SearchAction)" method="post" class="form-inline input-group-sm btn-group-sm">
+                    <span>
+                        <input name="Id" id="txtIdHeader" type="hidden" placeholder="Customer Id" value="-1">
+                        <input name="FirstName" id="txtFirstNameHeader" type="text" placeholder="First" value="" class="form-control col-md-2 mr-1">
+                        <input name="LastName" id="txtLastNameHeader" type="text" placeholder="Last" value="" class="form-control col-md-2 mr-1">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </span>
+                </form>
+                <small class="padding-xs">Database: @Html.Raw(CustomerController.CanConnect() ? "<span class='text-success'>[&#x2714;] Connected</span>" : "<strong><span class='text-danger'>[&#x2718;] Not connected</span></strong>")</small>
+            </div>
         </div>
     </nav>
 </div>

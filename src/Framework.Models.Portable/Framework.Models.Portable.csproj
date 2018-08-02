@@ -47,15 +47,9 @@
     <None Include="PreBuild.Release.bat" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Framework.Models.Shared\Customer\CustomerModel.cs">
-      <Link>Customer\CustomerModel.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Models.Shared\Customer\CustomerSearchModel.cs">
-      <Link>Customer\CustomerSearchModel.cs</Link>
-    </Compile>
-    <Compile Include="..\Framework.Models.Shared\Customer\CustomerTypeModel.cs">
-      <Link>Customer\CustomerTypeModel.cs</Link>
-    </Compile>
+    <Compile Include="Customer\CustomerModel.cs" />
+    <Compile Include="Customer\CustomerSearchModel.cs" />
+    <Compile Include="Customer\CustomerTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,17 +59,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Genesys.Extensions.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.6.444561\lib\portable-net451+win81+wpa81\Genesys.Extensions.Portable.dll</HintPath>
+    <Reference Include="Genesys.Extensions.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\portable-net451+win81+wpa81\Genesys.Extensions.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Extras.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.6.444561\lib\portable-net451+win81+wpa81\Genesys.Extras.Portable.dll</HintPath>
+    <Reference Include="Genesys.Extras.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\portable-net451+win81+wpa81\Genesys.Extras.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.6.447491\lib\portable-net451+win81+wpa81\Genesys.Framework.Interop.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.8.10491\lib\portable-net451+win81+wpa81\Genesys.Framework.Interop.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Framework.Models.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.6.447491\lib\portable-net451+win81+wpa81\Genesys.Framework.Models.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.8.10491\lib\portable-net451+win81+wpa81\Genesys.Framework.Models.Portable.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

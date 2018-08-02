@@ -38,13 +38,13 @@
     @RenderSection("scriptsHead", required: false)
 </head>
 <body>
-    @Html.Partial("/Views/Shared/header.cshtml")
+    @Html.Partial("~/Views/Shared/header.cshtml")
     <div class="container">
         <div class="body-content">
             @RenderBody()
         </div>
     </div>
-    @Html.Partial("/Views/Shared/footer.cshtml")
+    @Html.Partial("~/Views/Shared/footer.cshtml")
     @RenderSection("scripts", required: false)
 </body>
 </html>
