@@ -38,6 +38,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Framework.DataAccess.Shared\Customer\CustomerInfo.cs">
+      <Link>Customer\CustomerInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.DataAccess.Shared\Customer\CustomerType.cs">
+      <Link>Customer\CustomerType.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostBuild.Debug.bat" />
+    <None Include="PostBuild.Release.bat" />
+    <None Include="PreBuild.Debug.bat" />
+    <None Include="PreBuild.Release.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Interop.Portable\Framework.Interop.Portable.csproj">
+      <Project>{0ac46ec9-ec99-4bfa-8da9-4d9e0e9cb039}</Project>
+      <Name>Framework.Interop.Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -73,32 +103,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Customer\CustomerInfo.cs" />
-    <Compile Include="Customer\CustomerType.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PostBuild.Debug.bat" />
-    <None Include="PostBuild.Release.bat" />
-    <None Include="PreBuild.Debug.bat" />
-    <None Include="PreBuild.Release.bat" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Framework.Interop.Portable\Framework.Interop.Portable.csproj">
-      <Project>{0ac46ec9-ec99-4bfa-8da9-4d9e0e9cb039}</Project>
-      <Name>Framework.Interop.Portable</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

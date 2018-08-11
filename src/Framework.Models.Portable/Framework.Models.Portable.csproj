@@ -47,9 +47,15 @@
     <None Include="PreBuild.Release.bat" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer\CustomerModel.cs" />
-    <Compile Include="Customer\CustomerSearchModel.cs" />
-    <Compile Include="Customer\CustomerTypeModel.cs" />
+    <Compile Include="..\Framework.Models.Shared\Customer\CustomerModel.cs">
+      <Link>Customer\CustomerModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Models.Shared\Customer\CustomerSearchModel.cs">
+      <Link>Customer\CustomerSearchModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Models.Shared\Customer\CustomerTypeModel.cs">
+      <Link>Customer\CustomerTypeModel.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

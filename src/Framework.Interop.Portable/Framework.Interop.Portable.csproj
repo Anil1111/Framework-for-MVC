@@ -39,12 +39,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Customer\GenderList.cs" />
-    <Compile Include="Customer\ICustomer.cs" />
-    <Compile Include="Customer\ICustomerEdit.cs" />
-    <Compile Include="Customer\ICustomerSearch.cs" />
-    <Compile Include="Customer\ICustomerType.cs" />
-    <Compile Include="Customer\IGenderList.cs" />
+    <Compile Include="..\Framework.Interop.Shared\Customer\GenderList.cs">
+      <Link>Customer\GenderList.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomer.cs">
+      <Link>Customer\ICustomer.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomerEdit.cs">
+      <Link>Customer\ICustomerEdit.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomerSearch.cs">
+      <Link>Customer\ICustomerSearch.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomerType.cs">
+      <Link>Customer\ICustomerType.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\IGenderList.cs">
+      <Link>Customer\IGenderList.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

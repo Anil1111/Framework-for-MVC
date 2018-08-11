@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Framework.Interop</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\Genesys.Framework.Interop.Standard.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Framework.Interop.Standard.csproj.vspscc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Framework.Interop.Shared\Customer\GenderList.cs">
+      <Link>Customer\GenderList.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomer.cs">
+      <Link>Customer\ICustomer.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomerEdit.cs">
+      <Link>Customer\ICustomerEdit.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomerSearch.cs">
+      <Link>Customer\ICustomerSearch.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\ICustomerType.cs">
+      <Link>Customer\ICustomerType.cs</Link>
+    </Compile>
+    <Compile Include="..\Framework.Interop.Shared\Customer\IGenderList.cs">
+      <Link>Customer\IGenderList.cs</Link>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>    
+    <None Include="PostBuild.Debug.bat" />
+    <None Include="PostBuild.Release.bat" />
+    <None Include="PreBuild.Debug.bat" />
+    <None Include="PreBuild.Release.bat" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Genesys.Extensions.Standard" Version="4.18.8.10361" />
+    <PackageReference Include="Genesys.Framework.Interop.Standard" Version="4.18.8.10491" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Customer\" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PreBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PostBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
+  </Target>
+
+</Project>
