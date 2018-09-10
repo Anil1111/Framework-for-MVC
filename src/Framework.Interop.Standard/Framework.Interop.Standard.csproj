@@ -40,13 +40,6 @@
       <Link>Customer\IGenderList.cs</Link>
     </Compile>
   </ItemGroup>
-
-  <ItemGroup>    
-    <None Include="PostBuild.Debug.bat" />
-    <None Include="PostBuild.Release.bat" />
-    <None Include="PreBuild.Debug.bat" />
-    <None Include="PreBuild.Release.bat" />
-  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Genesys.Extensions.Standard" Version="4.18.8.10361" />
@@ -58,11 +51,11 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PreBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PreBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PostBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PostBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
 
 </Project>

@@ -13,7 +13,7 @@
     <SharedGUID>ed91e71f-eeb0-4b8c-8396-0d9c55e5446d</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Genesys.Framework.Models.Shared</Import_RootNamespace>
+    <Import_RootNamespace>Framework.Models.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Customer\CustomerModel.cs" />

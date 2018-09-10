@@ -25,7 +25,7 @@
             <div class="form-group row">
                 <div class="col-sm-3">Birth Date</div>
                 <div class="col-sm-9">
-                    @Html.TextBoxFor(m => m.BirthDate, new { @id = "txtBirthDate", @class = "form-control BirthDate", @Value = Model.BirthDate == TypeExtension.DefaultDate ? TypeExtension.DefaultString : Model.BirthDate.ToString("MM/dd/yyyy"), @placeholder = "MM/DD/YYYY" })
+                    @Html.TextBoxFor(m => m.BirthDate, new { @id = "txtBirthDate", @type="date", @class = "form-control BirthDate", @Value = Model.BirthDate == TypeExtension.DefaultDate ? TypeExtension.DefaultString : Model.BirthDate.ToString("MM/dd/yyyy"), @placeholder = "MM/DD/YYYY" })
                     @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -53,18 +53,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts {
-    <script type="text/javascript">
-        $(function () {
-            $("#txtBirthDate").datepicker({
-                dateformat: "mm/dd/yy",
-                changeMonth: true,
-                changeYear: true,
-                yearRange: 'c-75:c',
-                defaultDate: "-25y-m-d",
-                beforeShow: function () { $('#ui-datepicker-div').toMaxZIndex(); }
-            });
-        });
-    </script>
-}

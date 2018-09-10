@@ -20,7 +20,6 @@
   <ItemGroup>
     <Folder Include="Activity\" />
     <Folder Include="Application\" />
-    <Folder Include="App_Data\" />
     <Folder Include="Data\" />
     <Folder Include="Endpoints\" />
     <Folder Include="Entity\" />
@@ -125,10 +124,6 @@
     <None Include="App_Data\FrameworkData_Primary.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PostBuild.Debug.bat" />
-    <None Include="PostBuild.Release.bat" />
-    <None Include="PreBuild.Debug.bat" />
-    <None Include="PreBuild.Release.bat" />
   </ItemGroup>
   
   <ItemGroup>
@@ -152,9 +147,9 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PreBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PreBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PostBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PostBuild.$(Configuration).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(Configuration)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
 </Project>

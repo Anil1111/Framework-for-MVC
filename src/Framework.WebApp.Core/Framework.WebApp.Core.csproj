@@ -16,7 +16,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Partials\Genesys-Source\" />
@@ -170,10 +169,6 @@
     <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
     <None Include="App_Data\FrameworkData_Primary.mdf" />
-    <None Include="PostBuild.Debug.bat" />
-    <None Include="PostBuild.Release.bat" />
-    <None Include="PreBuild.Debug.bat" />
-    <None Include="PreBuild.Release.bat" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
 
@@ -193,11 +188,11 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(ConfigurationName)&quot; &quot;$(ProjectName)&quot;" />
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PreBuild.$(ConfigurationName).bat&quot; &quot;$(MSBuildProjectDirectory)&quot; &quot;$(ConfigurationName)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\PostBuild.$(ConfigurationName).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(ConfigurationName)&quot; &quot;$(ProjectName)&quot;" />
+    <Exec Command="Call &quot;$(MSBuildProjectDirectory)\App_Data\PostBuild.$(ConfigurationName).bat&quot; &quot;$(MSBuildProjectDirectory)\$(OutDir)&quot; &quot;$(ConfigurationName)&quot; &quot;$(ProjectName)&quot;" />
   </Target>
 
 </Project>

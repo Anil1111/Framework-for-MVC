@@ -63,6 +63,7 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
+    <Folder Include="App_Data" />
     <Folder Include="Properties" />
     <Folder Include="Security" />
     <Folder Include="Publish" />
@@ -82,7 +83,7 @@
     <Folder Include="Identity" />
     <Folder Include="Identity\Tables" />
     <Folder Include="Activity\Stored Procedures" />
-    <Folder Include="Publish\Dev" />
+    <Folder Include="Publish\Dev" />    
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Data\Master\CustomerType.sql" />
@@ -107,13 +108,13 @@
     <Build Include="Security\Customer.sql" />
     <Build Include="Security\Role_db_executor.sql" />
     <None Include="Publish\PublishToLocal.publish.xml" />
-    <None Include="PostBuild.Debug.bat" />
-    <None Include="PostBuild.Release.bat" />
-    <None Include="PreBuild.Debug.bat" />
-    <None Include="PreBuild.Release.bat" />
     <None Include="Publish\Dev\PublishToDev.publish.xml" />
     <None Include="Publish\Dev\PublishToDev-Compare.scmp" />
     <None Include="Publish\PublishToFile.publish.xml" />
+    <None Include="App_Data\PostBuild.Debug.bat" />
+    <None Include="App_Data\PostBuild.Release.bat" />
+    <None Include="App_Data\PreBuild.Debug.bat" />
+    <None Include="App_Data\PreBuild.Release.bat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish\Production\PublishToProd.publish.xml" />
@@ -149,9 +150,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>Call "$(MSBuildProjectDirectory)\PostBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)\$(OutDir)" "$(ConfigurationName)" "$(ProjectName)"</PostBuildEvent>
+    <PostBuildEvent>Call "$(MSBuildProjectDirectory)\App_Data\PostBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)\$(OutDir)" "$(ConfigurationName)" "$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>Call "$(MSBuildProjectDirectory)\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)" "$(ProjectName)"</PreBuildEvent>
+    <PreBuildEvent>Call "$(MSBuildProjectDirectory)\App_Data\PreBuild.$(ConfigurationName).bat" "$(MSBuildProjectDirectory)" "$(ConfigurationName)" "$(ProjectName)"</PreBuildEvent>
   </PropertyGroup>
 </Project>
