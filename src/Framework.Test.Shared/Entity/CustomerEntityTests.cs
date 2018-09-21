@@ -174,7 +174,7 @@ namespace Framework.Test
             testEntity.Key = Guid.NewGuid();
             oldId = testEntity.Id;
             oldKey = testEntity.Key;
-            Assert.IsTrue(testEntity.IsNew);
+            Assert.IsTrue(!testEntity.IsNew);
             Assert.IsTrue(testEntity.Id == TypeExtension.DefaultInteger);
             Assert.IsTrue(testEntity.Key != TypeExtension.DefaultGuid);
 

@@ -83,7 +83,8 @@
     <Folder Include="Identity" />
     <Folder Include="Identity\Tables" />
     <Folder Include="Activity\Stored Procedures" />
-    <Folder Include="Publish\Dev" />    
+    <Folder Include="Publish\Dev" />
+    <Folder Include="Publish\Test" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Data\Master\CustomerType.sql" />
@@ -115,6 +116,7 @@
     <None Include="App_Data\PostBuild.Release.bat" />
     <None Include="App_Data\PreBuild.Debug.bat" />
     <None Include="App_Data\PreBuild.Release.bat" />
+    <None Include="Publish\Test\PublishToTest.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish\Production\PublishToProd.publish.xml" />

@@ -75,22 +75,22 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extensions.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.9.258361\lib\net46\Genesys.Extensions.Full.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extensions.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.9.258361\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extras.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extras.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.9.258361\lib\net46\Genesys.Extras.Full.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extras.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extras.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.9.258361\lib\net46\Genesys.Extras.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Framework.DataAccess.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.8.10491\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
+    <Reference Include="Genesys.Framework.DataAccess.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.9.418221\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
+    <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.9.418221\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

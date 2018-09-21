@@ -25,7 +25,7 @@ namespace Framework.Customer
     /// <summary>
     /// Customer
     /// </summary>    
-    public interface ICustomer : IId, IKey
+    public interface ICustomer : IEntity
     {
         /// <summary>
         /// FirstName of customer entity

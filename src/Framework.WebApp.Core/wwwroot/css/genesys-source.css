@@ -263,7 +263,7 @@ a {
 /* 
 * Genesys Logo Color Palette
 */
-.genesys-blue {
+.genesys-blue, .btn-outline-primary {
     color: #0c60c6 !important;
 }
 
@@ -271,7 +271,7 @@ a {
     color: #5a5a5a !important;
 }
 
-.genesys-green {
+.genesys-green, .btn-outline-success {
     color: #73BE3D !important;
 }
 
@@ -291,7 +291,7 @@ a {
     color: #ffffff !important;
 }
 
-.genesys-blue-background {
+.genesys-blue-background, .btn-primary {
     background-color: #0c60c6 !important;
 }
 
@@ -299,7 +299,7 @@ a {
     background-color: #5a5a5a !important;
 }
 
-.genesys-green-background {
+.genesys-green-background, .btn-success {
     background-color: #73BE3D !important;
 }
 

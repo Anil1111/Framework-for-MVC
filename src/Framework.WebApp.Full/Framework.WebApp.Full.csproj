@@ -62,39 +62,36 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extensions.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extensions.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.9.258361\lib\net46\Genesys.Extensions.Full.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extensions.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.9.258361\lib\net46\Genesys.Extensions.Portable.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extras.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Full.4.18.8.10361\lib\net46\Genesys.Extras.Full.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Full.4.18.9.258361\lib\net46\Genesys.Extras.Full.dll</HintPath>
     </Reference>
     <Reference Include="Genesys.Extras.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.8.10361\lib\net46\Genesys.Extras.Portable.dll</HintPath>
+      <HintPath>..\packages\Genesys.Extensions.Portable.4.18.9.258361\lib\net46\Genesys.Extras.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Framework.DataAccess.Full, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.8.10491\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
+    <Reference Include="Genesys.Framework.DataAccess.Full, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Framework.DataAccess.Full.4.18.9.418221\lib\net46\Genesys.Framework.DataAccess.Full.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
+    <Reference Include="Genesys.Framework.Interop.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Framework.Interop.Portable.4.18.9.418221\lib\net46\Genesys.Framework.Interop.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Genesys.Framework.Models.Portable, Version=4.18.5.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
-      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.8.10491\lib\net46\Genesys.Framework.Models.Portable.dll</HintPath>
+    <Reference Include="Genesys.Framework.Models.Portable, Version=4.18.7.0, Culture=neutral, PublicKeyToken=d7d438e664f27f82, processorArchitecture=MSIL">
+      <HintPath>..\packages\Genesys.Framework.Models.Portable.4.18.9.418221\lib\net46\Genesys.Framework.Models.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -249,6 +246,13 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="images\Welcome\Genesys-Source-Logo-71x71-Transparent.png" />
+    <Content Include="images\Welcome\Genesys-Stack-Logical-Tiers-Full.png" />
+    <Content Include="images\Welcome\social-blog.png" />
+    <Content Include="images\Welcome\social-facebook.png" />
+    <Content Include="images\Welcome\social-rss.png" />
+    <Content Include="images\Welcome\social-twitter.png" />
+    <Content Include="Welcome.html" />
     <None Include="App_Data\AppSettings.Debug.config" />
     <None Include="App_Data\ConnectionStrings.Debug.config" />
     <Content Include="images\genesys\Map-of-the-Genesys-Source-Framework.png" />
@@ -268,7 +272,6 @@
     <Content Include="images\social\social-facebook.png" />
     <Content Include="images\social\social-rss.png" />
     <Content Include="images\social\social-twitter.png" />
-    <Content Include="Ping.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -321,7 +324,6 @@
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
     <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
     <Content Include="Scripts\popper.min.js.map" />
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
